@@ -3,42 +3,62 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FriendFinder</title>
+  <title>Nerd Love Finder</title>
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Carter+One|Rock+Salt" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 
   <!-- Font Awesome Glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container home">
 
-    <div class="jumbotron">
-      <h1><i class="fa fa-facebook-square" aria-hidden="true"></i> Friend Finder</h1>
-      <hr>
-      <h2>Answer a few basic questions. </h2>
-      <h2>Then find the friend with the greatest compatibility!</h2>
-      <br>
-
-      <div>
-        <a href="/survey"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>
-      </div>
-
+    <div class="row">
+        <div class="col-sm-12 col-lg-10">
+            <h1><i class="fas fa-dragon"></i> Nerd Love Finder</h1>
+            <hr>
+        </div>
     </div>
 
+    <div class="row">
+        <div class="col-sm-12 col-lg-10">
+            <h2>Answer the questions...</h2>
+            <h2>Then find a fellow nerd with the greatest compatibility!</h2>
+            <br>
+
+            <div>
+                <a href="/survey"><button type="button" class="btn btn-lg" id="survey-button"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>
+            </div>
+        </div> 
+    </div>
+            
+        </div>
+    </div>
+
+    <!-- <div class="jumbotron-fluid" id="home-jumbotron">
+        <div class="container">
+            
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
     <footer class="footer">
       <div class="container">
         <p><a href="/api/nerds">API Nerds List</a> | <a href="https://krystalcw.github.io/Nerd-Love-Dating-App/">GitHub Repo</a></p>
       </div>
     </footer>
 
-  </div>
+</div>
 
 
 </body>
