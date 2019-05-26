@@ -1,29 +1,44 @@
-var nerdsData = require("../data/nerds");
+var nerdsArray = require("../data/nerds");
 
 
 module.exports = function(app) {
 
   app.get("/api/nerds", function(req, res) {
-    res.json(nerdsData);
+    res.json(nerdsArray);
   });
 
   app.post("/api/nerds", function(req, res) {
-    nerdsData.push(req.body);
-    res.json(true);
+    let bestMatch = {
+      name: "",
+      photo: "",
+      nerdDifference: 0
+    }
+
+    var userSubmit = req.body;
+    var userScores= userSubmit.scores;
+
+    var totalDifference; 
+
+    for (var i = 0; i < nerdsArray.length; i++) {
+      var currentNerd = nerdsArray[i];
+      totalDifference = 0;
+
+      console.log(currentNerd.name);
+
+      for (var j = 0; j < currentNerd.scores.length; j++) {
+        var currentNerdScore = currentNerd.scores[j];
+        var currentUserScore = userScores[j];
+
+        totalDifference += Math.abs(parseInt(currentUserScore) - parseInt(currentNerdScore));
+      }
+
+      if (totalDifference <= bestMatch.nerdDifference) {
+        bestMatch.name = currentNerd.name;
+        bestMatch.photo = currentNerd.photo;
+        bestMatch.nerdDifference = totalDifference
+      }
+    }
+    nerdsArray.push(userSubmit);
+    res.json(bestMatch);
   });
 };
-
-
-// app.post("/api/tables", function(req, res) {
-//     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-//     // It will do this by sending out the value "true" have a table
-//     // req.body is available since we're using the body parsing middleware
-//     if (tableData.length < 5) {
-//       tableData.push(req.body);
-//       res.json(true);
-//     }
-//     else {
-//       waitListData.push(req.body);
-//       res.json(false);
-//     }
-//   });
