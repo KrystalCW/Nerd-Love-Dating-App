@@ -45,7 +45,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
-
+<!-- 
     <h3><strong>Question 2</strong></h3>
     <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
     <select class="chosen-select" id="q2">
@@ -148,7 +148,7 @@
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
-    </select>
+    </select> -->
 
     <br>
     <br>
@@ -234,22 +234,25 @@
 
       // If all required fields are filled
       if (validateForm()) {
-        // Create an object for the user"s data
+                // Create an object for the user"s data
+        let scoresTwo = [];
+        scoresTwo.push(Number($("#q1").val()));
+        let test = [];
+        test.push(parseInt("3"));
+        // scoresTwo.push(parseInt($("#q1").val()));
+        // scoresTwo.push(parseInt($("#q3").val()));
+        // scoresTwo.push(parseInt($("#q4").val()));
+        // scoresTwo.push(parseInt($("#q5").val()));
+        // scoresTwo.push(parseInt($("#q6").val()));
+        // scoresTwo.push(parseInt($("#q7").val()));
+        // scoresTwo.push(parseInt($("#q8").val()));
+        // scoresTwo.push(parseInt($("#q9").val()));
+        // scoresTwo.push(parseInt($("#q10").val()));
         var userData = {
           name: $("#name").val(),
           photo: $("#photo").val(),
-          scores: [
-            $("#q1").parseInt(),
-            $("#q2").parseInt(),
-            $("#q3").parseInt(),
-            $("#q4").parseInt(),
-            $("#q5").parseInt(),
-            $("#q6").parseInt(),
-            $("#q7").parseInt(),
-            $("#q8").parseInt(),
-            $("#q9").parseInt(),
-            $("#q10").parseInt()
-          ]
+          scores: scoresTwo,
+          test: test
         };
 
         // AJAX post the data to the nerds API.
