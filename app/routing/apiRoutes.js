@@ -8,10 +8,10 @@ module.exports = function(app) {
   });
 
   app.post("/api/nerds", function(req, res) {
-    let bestMatch = {
+    var bestMatch = {
       name: "",
       photo: "",
-      nerdDifference: 0
+      nerdDifference: 1500
     }
 
     var userSubmit = req.body;
@@ -35,7 +35,8 @@ module.exports = function(app) {
       if (totalDifference <= bestMatch.nerdDifference) {
         bestMatch.name = currentNerd.name;
         bestMatch.photo = currentNerd.photo;
-        bestMatch.nerdDifference = totalDifference
+        bestMatch.nerdDifference = totalDifference;
+        console.log(bestMatch);
       }
     }
     nerdsArray.push(userSubmit);
